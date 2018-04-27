@@ -21,7 +21,7 @@ def run() -> None:
         mypy()
 
     elif cmd == 'mypy-strict':
-        mypy(True)
+        mypy()
 
     elif cmd in ('test', 'tests', 'pytest'):
         tests()
@@ -45,13 +45,12 @@ def lint() -> None:
     import pylint.lint
     pylint.lint.Run(args, do_exit=True)
 
-def mypy(strict: bool = False) -> None:
+def mypy() -> None:
     args = [
         '--ignore-missing-imports',     # Don't complain about 3rd party libs with no stubs
         '--disallow-untyped-calls',     # Strict Mode.  All function calls must have a return type.
+        '--disallow-incomplete-defs',   # All parameters must have type definitions.
         ]
-    if strict:
-        args.append('--disallow-incomplete-defs') # All parameters must have type definitions.
     args.extend(sys.argv[2:] or [
         '.'                             # Invoke on the entire project.
         ])
