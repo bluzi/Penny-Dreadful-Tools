@@ -60,7 +60,8 @@ def determine_bugs(s: str) -> Optional[List[Dict[str, object]]]:
     for b in bugs:
         description, classification, last_confirmed, url, from_bug_blog, bannable = b.split('|')
         bb = from_bug_blog == '1'
-        bug = {'description': description, 'classification': classification, 'last_confirmed': dtutil.ts2dt(int(last_confirmed)), 'url': url, 'from_bug_blog': bb, 'bannable': bannable}
+        ban = bannable == '1'
+        bug = {'description': description, 'classification': classification, 'last_confirmed': dtutil.ts2dt(int(last_confirmed)), 'url': url, 'from_bug_blog': bb, 'bannable': ban}
         v.append(bug)
     if v:
         return v

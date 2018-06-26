@@ -99,6 +99,8 @@ class SignUpForm(Form):
 
         banned_for_bugs = set([c.name for c in self.deck.all_cards() if any([b.get('bannable') for b in c.bugs or []])])
         if len(banned_for_bugs) > 0:
+            if 'decklist' not in self.errors:
+                self.errors['decklist'] = 'You have illegal cards.'
             self.card_errors['Legality_Bugs'] = [name for name in banned_for_bugs]
 
 
