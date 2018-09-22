@@ -14,6 +14,7 @@ dsfdsf
 dsfdsf
 fdsfds
 dsfdssdf
+dsf
 
 def run() -> None:
     cmd = sys.argv[1].lower()
