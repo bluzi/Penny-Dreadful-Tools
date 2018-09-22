@@ -12,6 +12,7 @@ if ON_PROD:
     sys.exit(1)
 dsfdsf
 dsfdsf
+fdsfds
 
 def run() -> None:
     cmd = sys.argv[1].lower()
