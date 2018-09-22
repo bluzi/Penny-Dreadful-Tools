@@ -13,6 +13,7 @@ if ON_PROD:
 dsfdsf
 dsfdsf
 fdsfds
+dsfdssdf
 
 def run() -> None:
     cmd = sys.argv[1].lower()
