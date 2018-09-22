@@ -10,6 +10,8 @@ ON_PROD = configuration.get_bool('production')
 if ON_PROD:
     print('DO NOT RUN dev.py ON PROD')
     sys.exit(1)
+dsfdsf
+dsfdsf
 
 def run() -> None:
     cmd = sys.argv[1].lower()
